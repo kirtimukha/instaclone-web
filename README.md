@@ -1,5 +1,16 @@
 # instaclone WEB
 
+# 1. SET UP
+-[] Router: 화면전환 - react router 사용
+    1. Router는 특정 url로 이동시 components를 보여줌
+    2. 방법 
+        1) hash router       '/#/login' //import { HashRouter as Router } from 'react-router-dom'; // 매치되는 url을 찾는 방법이라서 home의 내용이 계속 포함되어 보임
+        2) browser router    '/login'   //import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+-[] Authentication: 로그인 여부 전달
+-[] Arch: 파일을 어디에 놓을지 결정 
+-[] Styles: Style, theme(Dark, Normal) 설정
+
+
 # Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
