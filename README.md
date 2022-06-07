@@ -1,7 +1,7 @@
 # instaclone WEB
 
 # 1. SET UP
--[] Router: 화면전환 - react router 사용
+-[O] Router: 화면전환 - react router 사용
     1. Router는 특정 url로 이동시 components를 보여줌
     2. 방법 
         1) hash router       '/#/login' //import { HashRouter as Router } from 'react-router-dom'; // 매치되는 url을 찾는 방법이라서 home의 내용이 계속 포함되어 보임
