@@ -10,19 +10,7 @@ import NotFound from "./screens/NotFound";
 
 import { darkModeVar, isLoggedInVar } from "./apollo";
 import { ThemeProvider } from "styled-components";
-import { darkTheme, GlobalStyles, lightTheme } from "./styles";
-
-
-/* const lightTheme = {
-  fontColor: "#2c2c2c",
-  bgColor: "lightgray",
-};
-
-const darkTheme = {
-  fontColor: "lightgray",
-  bgColor: "#2c2c2c",
-};
- */
+import { darkTheme, lightTheme, GlobalStyles} from "./styles";
 
 
 function App() {
@@ -45,12 +33,12 @@ function App() {
   // reactive variables를 사용하면 상태 변화를 간단히 할 수 있다.
   // 다크모드, 유튜브의 재생상태 등은 백엔드로 갈 필요가 없다. 그럴 때 reactive variables를 사용한다.)
   // 2) reactive Variables 설정방법: apollo.js에  makeVar를 설정하고 hook을 사용한다.
-  //const isLoggedIn = useReactiveVar(isLoggedInVar);
+  // const isLoggedIn = useReactiveVar(isLoggedInVar);
 
 
   return (
-  //<ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-  //<GlobalStyles />
+  <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+  <GlobalStyles />
     <Router>
         <Routes>
           <Route path="/" element={isLoggedIn ? <Home /> : <Login  />} >
@@ -63,7 +51,7 @@ function App() {
        {/* <Route path="*" element={<NotFound />} />*/}
 
     </Router>
-  //</ThemeProvider>
+  </ThemeProvider>
   );
 }
 

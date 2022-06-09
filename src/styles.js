@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-//import reset from "styled-reset";
+import reset from "styled-reset";
 
 export const lightTheme = {
   fontColor: "#2c2c2c",
@@ -12,8 +12,8 @@ export const darkTheme = {
 };
  /* // ${reset} */
 export const GlobalStyles = createGlobalStyle`
-  
+    ${reset}
     body {
-        background-color: ${(props) => props.theme.bgColor};
+        background-color: ${(props) => props.theme.bgColor};//GlobalStyles가 Themprovier에 들어가 있기 때문에 theme props을 쓸 수 있다.
     }
 `;
