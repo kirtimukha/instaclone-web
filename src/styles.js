@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
+import { BrowserRouterasRouter } from 'react-router-dom';
 
 export const lightTheme = {
   fontColor: "#2c2c2c",
@@ -10,10 +11,12 @@ export const darkTheme = {
   fontColor: "lightgray",
   bgColor: "#2c2c2c",
 };
- /* // ${reset} */
+
 export const GlobalStyles = createGlobalStyle`
     ${reset}
+    input{ all:unset; box-sizing: border-box;}
+    * {box-sizing: border-box; }
     body {
-        background-color: ${(props) => props.theme.bgColor};//GlobalStyles가 Themprovier에 들어가 있기 때문에 theme props을 쓸 수 있다.
+        background-color: #fafafa;
     }
 `;
