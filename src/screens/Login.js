@@ -2,7 +2,12 @@ import { useState } from 'react';
 import {darkModeVar, isLoggedInVar} from './../apollo';
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import {faFacebookSquare, faInstagram} from '@fortawesome/free-brands-svg-icons';
+
+
+const Title = styled.h1`
+  color: ${(props) => props.theme.fontColor};
+`;
 
 const Container = styled.div`
 display:flex;
@@ -12,15 +17,11 @@ align-items: center;
 -ms-flex-direction: column;
 flex-direction: column;
 `;
-const Wrapper = styled.div`
-max-width: 350px;
-width: 100%;
-`;
+
 const WhiteBox = styled.div`
 background-color: white;
 border: 1px solid rgb(219, 219, 219);
 width:100%;
-
 `;
 
 const TopBox = styled(WhiteBox)`
@@ -30,54 +31,77 @@ align-items: center;
 -ms-flex-direction: column;
 flex-direction: column;
 padding: 35px 40px 20px 40px;
-
+margin-bottom: 10px;
 form{
-  margin-top:32px;
+  margin-top:35px;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   input{
     width: 100%;
     border-radius: 3px;
     padding: 7px;
-    border: 0.5px solid rgba(219,219,219);
     background-color: #fafafa;
+    border: 0.5px solid rgba(219,219,219);
     margin-top: 5px;
 
+    &::placeholder{
+      font-size: 12px;
+    }
     &:last-child{
       border:none;
       margin-top: 12px;
       background-color: #0095f0;
       color: white;
       text-align: center;
-      padding: 5px 0;
-      font-weight: 500;
+      padding: 8px 0px;
+      font-weight: 600;
+      
     }
   }
 }
 `;
 
 const BottomBox = styled(WhiteBox)`
-  padding: 10px 0;
+  padding: 20px 0;
   text-align: center;
+  a{
+    font-weight:600;
+    color:#0095f6;
+  }
+`;
+const Wrapper = styled.div`
+    max-width: 350px;
+    width: 100%;
 `;
 
 const Seperator = styled.div`
-margin:10px 0;
-text-transform: uppercase;
-display: flex;
-justify-content: center;
-width: 100%;
-align-items: center;
-  div{
+    margin:20px 0 30px 0;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    div{
     width: 100%;
     height: 1px;
     background-color: rgb(219,219,219);
-  }
-  span{margin: 15px 10px 20px 0; color:#8e8e8e;}
+    }
+    span{
+      margin: 0px 10px; 
+      font-weight: 600;
+      color:#8e8e8e;
+    }
 `;
+
+const FacebookLogin = styled.div`
+  color: #385285;
+  font-weight: 500;
+  span{margin-left:10px; font-weight: 600;}
+`;
+
 function Login( ) {
    return (
     <Container>
@@ -92,11 +116,14 @@ function Login( ) {
              <input type="submit" name="" id="" value="Log in" />
            </form>
            <Seperator>
-             <div></div>
-             Or
-             <div></div>
+                <div></div>
+                <span>Or</span>
+                <div></div>
            </Seperator>
-           <span>Login in with Facebook</span>
+           <FacebookLogin>
+               <FontAwesomeIcon icon={faFacebookSquare} />
+               <span>Login in with Facebook</span>
+           </FacebookLogin>
          </TopBox>  
         <BottomBox>
           <span>Don't have an account?</span>    <a href="#">Sign up</a>
