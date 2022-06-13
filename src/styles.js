@@ -1,10 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
-import { BrowserRouterasRouter } from 'react-router-dom';
 
 export const lightTheme = {
-  fontColor: "#2c2c2c",
-  bgColor: "white",
+  accent: "#0095f0",
+  borderColor: "rgb(219,219,219)",
 };
 
 export const darkTheme = {
@@ -20,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
         background-color: #fafafa;
         font-size: 14px;
         font-family: 'Open Sans', sans-serif;
+        color: rgb(38,38,38)
     }
     a{text-decoration: none;}
 `;
