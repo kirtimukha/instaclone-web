@@ -19,13 +19,16 @@ const FacebookLogin = styled.div`
 
 
 function Login( ) {
-  const { register, handleSubmit, formState } = useForm({
-    mode: "onChange",
+  const { register, handleSubmit, formState, errors } = useForm({
+    mode: "onChange", // all, onChange, onSubmit, onTouched 모드
   } );
   const onSubmitValid = (data) => { }
   const onSubmitInValid = (data) => {
-    //console.log(data, 'inValid')s
+    //console.log(data, 'inValid')
   }
+console.log(errors);
+//console.log(formState.isValid);
+//console.log(register);
 
   return (
     <Authlayout>
@@ -61,6 +64,7 @@ function Login( ) {
             placeholder="Password"
             hasError={ formState.errors?.password?.message}
           />
+           {errors?.password?}
            <FormError message={ formState.errors?.password?.message} />
           <Button type="submit" name="login_button" id="" value="Log in" disabled={!formState.isValid} />
            </form>
