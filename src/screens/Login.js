@@ -64,7 +64,7 @@ console.log(errors);
             placeholder="Password"
             hasError={ formState.errors?.password?.message}
           />
-           {errors?.password?}
+{/*           {errors.password?}*/}
            <FormError message={ formState.errors?.password?.message} />
           <Button type="submit" name="login_button" id="" value="Log in" disabled={!formState.isValid} />
            </form>
