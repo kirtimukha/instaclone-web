@@ -26,7 +26,7 @@ function Login( ) {
   const onSubmitInValid = (data) => {
     //console.log(data, 'inValid')s
   }
-  console.log(formState.errors);
+
   return (
     <Authlayout>
         <FormBox>
@@ -49,13 +49,13 @@ function Login( ) {
               name="username"
               type="text" id=""
             placeholder="User Name"
-            hasError={ formState.errors?.username?.message} 
+            hasError={ formState.errors?.username?.message}
           />
           <FormError message={ formState.errors?.username?.message} />
-          <Input  
+          <Input
               name="password"
-              { ...register( 'password', 
-                { required: 'password is required.', minLength: { value: 6, message:'Needs more than 6 Characters.'},maxLength: 20} ) 
+              { ...register( 'password',
+                { required: 'password is required.', minLength: { value: 6, message:'Needs more than 6 Characters.'},maxLength: 20} )
               }
               type="password" id="pw"
             placeholder="Password"
